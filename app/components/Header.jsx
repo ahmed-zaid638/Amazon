@@ -8,7 +8,7 @@ import { AiOutlineSearch, AiOutlineShoppingCart } from "react-icons/ai";
 
 const Header = () => {
   return (
-    <div className="h-20  px-4 py-3 shadow-sm flex  items-center  md:py-4 md:px-8 sticky top-0 left-0 ">
+    <div className="h-20  w-full px-4 py-3 shadow-sm  bg-white flex  items-center  md:py-4 md:px-8 fixed  top-0 left-0 z-50 ">
       <div className="">
         <Image src={logo} width={120} height={66} alt="" />
       </div>
