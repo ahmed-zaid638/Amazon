@@ -12,8 +12,8 @@ const Header = () => {
       <div className="">
         <Image src={logo} width={120} height={66} alt="" />
       </div>
-      <div className="w-full ps-3  ">
-        <form className="flex  ">
+      <div className="w-full ps-3 ">
+        <form className="flex ">
           <input
             type="text"
             name=""

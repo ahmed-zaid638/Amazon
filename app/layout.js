@@ -15,9 +15,9 @@ export default function RootLayout({ children }) {
       </Head>
       <body >
         <Header />
-        <div className='flex m-7 mt-0  '>
+        <div className='flex m-8  mt-[110px] '>
           <Sidebar />
-          <div className='w-full mt-[80px] ms-0  ' >{children}</div>
+          <div className='w-full lg:ms-rounded-lg -ms-[9px] ' >{children}</div>
         </div>
       </body>
     </html>
