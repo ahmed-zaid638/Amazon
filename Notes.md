@@ -18,10 +18,11 @@
 - await can not work without async
 - position fixed make the element absolute for the body
 - differntiate between navigation and pagniation
+- key tag is passed to the first element after map function
 
 
 
----------- Learned -----------
+---------- Learned ------------
 - useRouter hook
 - routing in nextjs
 

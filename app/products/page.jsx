@@ -1,6 +1,7 @@
 /* eslint-disable react/jsx-key */
 "use client"
 import React, { useEffect } from 'react';
+import Link from 'next/link';
 import Card from '../components/Card';
 
 const getProducts = async () => {
@@ -15,9 +16,9 @@ const Page = async () => {
             {
                 products.map((product, index) => {
                     return ( 
-                        <div key={index} className='w-[200px]'>
+                        <Link key={index} href={`/products/${product.id}`} className='w-[200px]'>
                             <Card name={product.name} image={product.image} price={product.price} className='w-[220px]' />
-                        </div>
+                        </Link>
                     )
                 })
             }

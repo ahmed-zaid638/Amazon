@@ -3,14 +3,25 @@ import React, { useState } from "react";
 import { BiCategoryAlt, BiLogoGoogle } from "react-icons/bi";
 import { RiBillFill } from "react-icons/ri"
 import { FcGoogle } from "react-icons/fc"
+import { FiLogOut } from 'react-icons/fi'
 import Link from "next/link";
+import { db } from "../../firebase";
+import { auth, provider } from "../../firebase";
+import { signInWithPopup, signOut } from "firebase/auth";
+import { useAuthState } from 'react-firebase-hooks/auth';
 
 
 const Sidebar = () => {
   let categories = ['Electronics', 'Home and Garden', 'Fashion', 'Beauty Products', 'Automotive', 'Books', 'Games', 'Watch']
-
+  const [user, loading, error] = useAuthState(auth);
+  const Login = async () => {
+    await signInWithPopup(auth, provider)
+  }
+  const Logout = async () => {
+    await signOut(auth)
+  }
   return (
-    <div className="hidden lg:block w-[360px] h-[83vh] p-4  border shadow-sm rounded-xl sticky left-0 top-[110px]  pt-6 ">
+    <div className="hidden lg:block w-[300px] h-[83vh] p-4  border shadow-sm rounded-xl fixed left-10 top-[110px]  pt-6 ">
       <div className="flex  items-center  ">
         <div className="h-10  w-1 bg-[#ff9900] left-0 absolute "></div>
         <BiCategoryAlt size={26} />
@@ -30,11 +41,17 @@ const Sidebar = () => {
           </button>
         </Link>
       </div>
-      <div className="px-5 py-2 bg-black rounded-lg mt-3">
-        <Link href={"#"} className="flex items-center">
-          <span><FcGoogle size={20} color="white" /></span>
-          <span className="text-white ms-2 text-md font-[500]">Login with Google</span>
-        </Link>
+      <div className="px-5 py-2 bg-black rounded-lg mt-3 cursor-pointer">
+        {
+          user ? <button className="flex items-center" onClick={Logout}>
+            <span><FiLogOut size={20} color="white" /></span>
+            <span className="text-white ms-2 text-md font-[500]">Logout</span>
+          </button> :
+            <button className="flex items-center" onClick={Login}>
+              <span><FcGoogle size={20} color="white" /></span>
+              <span className="text-white ms-2 text-md font-[500]">Login with Google</span>
+            </button>
+        }
       </div>
     </div>
   );

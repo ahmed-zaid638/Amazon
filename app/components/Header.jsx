@@ -7,16 +7,21 @@ import defaultImage from "../../public/images/defaultImage.png";
 import { AiOutlineSearch, AiOutlineShoppingCart } from "react-icons/ai";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
+import { useAuthState } from "react-firebase-hooks/auth";
+import { auth } from "../../firebase";
 
 const Header = () => {
   const router = useRouter();
   const [searchTerm, setsearchTerm] = useState("")
+  const [user , loading ] = useAuthState(auth)
   const searching = (e) => {
     e.preventDefault();
     if (searchTerm !== '') {
       router.push(`category/${searchTerm}`)
     }
   }
+
+  const totalLenth = 0
 
   return (
     <div className="h-20  w-full px-4 py-3 shadow-sm  bg-white flex  items-center  md:py-4 md:px-8 fixed  top-0 left-0 z-50 ">
@@ -26,6 +31,7 @@ const Header = () => {
       <div className="w-full ps-3 ">
         <form className="flex " onSubmit={searching}>
           <input
+
             type="text"
             name=""
             placeholder="Search Here"
@@ -42,13 +48,13 @@ const Header = () => {
           <button className="w-11  h-11 flex items-center justify-center ms-3 bg-[#ff9900] rounded-lg relative  ">
             <AiOutlineShoppingCart size={20} />
             <span className=" absolute right-[-4px] top-[-10px] w-6 h-6 bg-red-600 flex justify-center items-center rounded-full text-white  ">
-              0
+              {totalLenth}
             </span>
           </button>
         </Link>
         <div className="w-11 h-11  ms-3 rounded-full">
           <Link href={"profile"}>
-            <Image src={defaultImage} width={120} height={66} alt="" />
+            <Image src={ user ? user.photoURL : defaultImage} width={120} height={66} alt="" />
           </Link>
         </div>
       </div>
