@@ -1,8 +1,9 @@
 ---------- Tools -----------
-- Uuid library
-- Wwipper library
-- React icons
+- uuid library
+- swipper library
+- react icons
 - magic-gradient
+- react-top-loading-bar  => create loaging.js file  => app/dashboard/loading.js
 
 
 

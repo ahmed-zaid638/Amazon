@@ -4,16 +4,11 @@ import { BiCategoryAlt, BiLogoGoogle } from "react-icons/bi";
 import { RiBillFill } from "react-icons/ri"
 import { FcGoogle } from "react-icons/fc"
 import Link from "next/link";
-import { useRouter } from "next/navigation";
 
 
 const Sidebar = () => {
   let categories = ['Electronics', 'Home and Garden', 'Fashion', 'Beauty Products', 'Automotive', 'Books', 'Games', 'Watch']
-  const router = useRouter();
-  const [searchItem] = useState("")
-  const searching = () => {
-    router.push('category/watch')
-  }
+
   return (
     <div className="hidden lg:block w-[360px] h-[83vh] p-4  border shadow-sm rounded-xl sticky left-0 top-[110px]  pt-6 ">
       <div className="flex  items-center  ">

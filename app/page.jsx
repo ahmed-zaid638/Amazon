@@ -62,11 +62,11 @@ const Page = async () => {
 
   ];
   return <div className="m-4 ">
-    <div className=" w-full h-72 p-6 -mt-[15px] flex items-center justify-between rounded-lg magic-gradient shadow-sm ms-2" >
+    <div className=" w-full h-72 p-6 flex items-center justify-between rounded-lg magic-gradient shadow-sm -mt-[15px]" >
       <div className="">
         <h1 className="text-xl   lg:text-3xl  text-white font-bold ">FREE DELIVERY </h1>
         <p className="text-white py-4 text-[24px] lg:text-xl  ">Do not miss it out! Only today, get free Next Day Delivery on all your orders.</p>
-        <Link href={"#"}>  <button className="bg-red-500 px-4 py-3 text-white rounded-md"> Browse Products</button>
+        <Link href={"/products"}>  <button className="bg-red-500 px-4 py-3 text-white rounded-md"> Browse Products</button>
         </Link>
       </div>
       <div className="h-52 w-[18rem]  ">
