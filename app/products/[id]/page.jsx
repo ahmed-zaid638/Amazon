@@ -2,7 +2,6 @@ import Image from "next/image";
 import React from "react";
 import Buttons from "@/app/components/Buttons";
 
-
 const getProduct = async (id) => {
     const products = await fetch(
         `https://www.screentechnicals.com/api/ecommerce/products/${id}`,

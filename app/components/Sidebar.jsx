@@ -1,11 +1,10 @@
 'use client'
-import React, { useState } from "react";
+import React  from "react";
 import { BiCategoryAlt, BiLogoGoogle } from "react-icons/bi";
 import { RiBillFill } from "react-icons/ri"
 import { FcGoogle } from "react-icons/fc"
 import { FiLogOut } from 'react-icons/fi'
 import Link from "next/link";
-import { db } from "../../firebase";
 import { auth, provider } from "../../firebase";
 import { signInWithPopup, signOut } from "firebase/auth";
 import { useAuthState } from 'react-firebase-hooks/auth';

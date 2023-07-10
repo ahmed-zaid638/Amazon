@@ -9,9 +9,7 @@ import { AiOutlineMobile } from "react-icons/ai";
 import {
   FaTshirt,
   FaBicycle,
-  FaHeadphonesAlt,
-  FaAngleRight,
-  FaAngleLeft,
+  FaHeadphonesAlt
 } from "react-icons/fa";
 import { IoGameController } from "react-icons/io5";
 

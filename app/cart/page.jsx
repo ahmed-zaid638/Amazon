@@ -2,20 +2,18 @@ import React from 'react'
 import cart from '../../public/gifs/cart.gif'
 import Image from 'next/image'
 import CartCard from '../components/CartCard'
-import { signInWithEmailAndPassword } from 'firebase/auth'
+
 
 const Page = () => {
- 
-const test = () => {
-  signInWithEmailAndPassword()
-}
+
+
     return (
         <div className='border rounded-md h-[80vh]    bg-white p-5 relative  ' >
             <div className="flex  justify-between">
                 <div className="flex font-bold">
                     <h1 className="text-3xl">Your Shopping Cart</h1>
                     <div className='w-16 h-16  '>
-                        <Image src={cart} alt="" />
+                        {/* <Image src={cart} alt="" /> */}
                     </div>
                 </div>
 
@@ -37,5 +35,6 @@ const test = () => {
 
 
 export default Page
+
 
 
