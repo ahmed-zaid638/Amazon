@@ -1,6 +1,6 @@
 'use client'
 import { collection, orderBy, query } from "firebase/firestore";
-import cart from '../../public/gifs/cart.gif'
+import cartGif from '../../public/gifs/cart.gif'
 import emptycart from '../../public/gifs/emptycart.gif'
 import Image from "next/image";
 import React from "react";
@@ -13,8 +13,6 @@ import { loadStripe } from "@stripe/stripe-js";
 export const metadata = {
     title: 'Cart'
 }
-
-
 const Page = () => {
     const [user, loading] = useAuthState(auth);
     const cartsRef = collection(db, "cart");
@@ -33,10 +31,14 @@ const Page = () => {
     for (let i = 0; i < total.length; i++) {
         sum += total[i];
     }
-
-
-    //stripe
-    const stripePromise  = loadStripe(process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY)
+    //stripe checkout
+    const stripePromise = loadStripe(
+        process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY
+    )
+    const createCheckout = async () => {
+        console.log('checkout');
+        const stripe = await stripePromise;
+    };
 
     return (
         <div className='border rounded-md h-[80vh]    bg-white p-5 relative  ' >
@@ -44,7 +46,7 @@ const Page = () => {
                 <div className="flex font-bold">
                     <h1 className="text-3xl">Your Shopping Cart</h1>
                     <div className='w-16 h-16  '>
-                        {/* <Image src={cart} alt="" /> */}Hello 
+                        <Image src={cartGif} alt="" />
                     </div>
                 </div>
 
@@ -59,8 +61,6 @@ const Page = () => {
                     </p>
                 </div>
             </div>
-
-
             {/* Card card  */}
             <div className="w-full h-[63vh] overflow-y-auto">
                 {!loading2 ? (
@@ -87,8 +87,8 @@ const Page = () => {
                                 <Image
                                     src={"/gifs/emptycart.gif"}
                                     alt=""
-                                    width={500}
-                                    height={500}
+                                    width={300}
+                                    height={300}
                                     priority={true}
                                 />
                             </div>
@@ -98,8 +98,8 @@ const Page = () => {
                             <Image
                                 src={"/gifs/emptycart.gif"}
                                 alt=""
-                                width={500}
-                                height={500}
+                                width={300}
+                                height={300}
                                 priority={true}
                             />
                         </div>
@@ -110,14 +110,14 @@ const Page = () => {
                     </div>
                 )}
             </div>
-            
+
             <div>
                 {user &&
                     cartSnapshots?.docs?.filter((data) => data?.data()?.uid === user?.uid)
                         ?.length ? (
                     <button
                         className="w-full bg-gradient-to-b from-[#ffd900] to-[#ffb300] rounded-xl p-2 text-xl font-semibold hover:from-[#ffb300] hover:to-[#ffd900]"
-                        // onClick={createCheckout}
+                        onClick={createCheckout}
                     >
                         Proceed To Pay
                     </button>
@@ -133,7 +133,6 @@ const Page = () => {
         </div>
     )
 }
-
 
 export default Page
 
