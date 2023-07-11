@@ -1,6 +1,6 @@
 import Image from "next/image";
 import React from "react";
-import Buttons from "@/app/components/Buttons";
+import Buttons from "../../components/Buttons";
 
 const getProduct = async (id) => {
     const products = await fetch(

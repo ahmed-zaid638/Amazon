@@ -19,6 +19,8 @@
 - position fixed make the element absolute for the body
 - differntiate between navigation and pagniation
 - key tag is passed to the first element after map function
+- you can console before return keyword
+- we can make nested ternery operators 
 
 
 

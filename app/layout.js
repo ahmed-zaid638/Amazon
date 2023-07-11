@@ -3,7 +3,9 @@ import Header from './components/Header'
 import Sidebar from './components/Sidebar'
 import Head from 'next/head'
 import { BiCar } from 'react-icons/bi'
-
+export const metadata = {
+  title: 'Home'
+}
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
