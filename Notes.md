@@ -21,12 +21,22 @@
 - key tag is passed to the first element after map function
 - you can console before return keyword
 - we can make nested ternery operators 
+- to login to any remote server with termnal or command line you should first installl CLI for this server
+- if you want to ensure that package is installed just type the package name 
+- differntiate between CLI and GUI
+- when you get stuck with installation use powershell instead of command line
 
 
 
 ---------- Learned ------------
 - useRouter hook
 - routing in nextjs
+
+
+
+--------- snippets ------------
+- to access .env variables  use 'process.env.variable_name
+
 
 
 

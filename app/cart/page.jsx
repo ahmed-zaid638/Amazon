@@ -9,7 +9,10 @@ import { useCollection, useCollectionData } from "react-firebase-hooks/firestore
 import { auth, db } from "../../firebase";
 import CartCard from "../components/CartCard";
 import { ImSpinner2 } from "react-icons/im";
-// import { loadStripe } from "@stripe/stripe-js";
+import { loadStripe } from "@stripe/stripe-js";
+export const metadata = {
+    title: 'Cart'
+}
 
 
 const Page = () => {
@@ -31,13 +34,17 @@ const Page = () => {
         sum += total[i];
     }
 
+
+    //stripe
+    const stripePromise  = loadStripe(process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY)
+
     return (
         <div className='border rounded-md h-[80vh]    bg-white p-5 relative  ' >
             <div className="flex  justify-between">
                 <div className="flex font-bold">
                     <h1 className="text-3xl">Your Shopping Cart</h1>
                     <div className='w-16 h-16  '>
-                        <Image src={cart} alt="" />
+                        {/* <Image src={cart} alt="" /> */}Hello 
                     </div>
                 </div>
 
