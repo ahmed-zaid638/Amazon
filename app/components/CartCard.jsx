@@ -25,5 +25,3 @@ const CartCard = ({image, name, description, price, id}) => {
 }
 
 export default CartCard
-
-
