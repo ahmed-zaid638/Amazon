@@ -20,7 +20,7 @@ const Sidebar = () => {
     await signOut(auth)
   }
   return (
-    <div className="hidden lg:block w-[300px] bg-white h-[80vh] p-4  border shadow-sm rounded-xl fixed left-10 top-[110px]  pt-6 ">
+    <div className="hidden lg:block w-[260px] bg-white h-[80vh] p-4  border shadow-sm rounded-xl fixed left-10 top-[110px]  pt-6 ">
       <div className="flex  items-center  ">
         <div className="h-10  w-1 bg-[#ff9900] left-0 absolute "></div>
         <BiCategoryAlt size={26} />
