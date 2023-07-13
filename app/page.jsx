@@ -61,18 +61,18 @@ const Page = async () => {
   ];
   return <div className="m-4 ">
     <div className=" w-full h-72 p-6 flex items-center justify-between rounded-lg magic-gradient shadow-sm -mt-[15px]" >
-      <div className="">
-        <h1 className="text-xl   lg:text-3xl  text-white font-bold ">FREE DELIVERY </h1>
-        <p className="text-white py-4 text-[24px] lg:text-xl  ">Do not miss it out! Only today, get free Next Day Delivery on all your orders.</p>
-        <Link href={"/products"}>  <button className="bg-red-500 px-4 py-3 text-white rounded-md"> Browse Products</button>
+      <div className="  w=[90%] md-[70%] ">
+        <h1 className="text-xl   lg:text-3xl  text-white font-bold  ">FREE DELIVERY </h1>
+        <p className="text-white py-4 text-[16px] lg:text-xl  ">Do not miss it out! Only today, get free Next Day Delivery on all your orders.</p>
+        <Link href={"/products"}>  <button className="bg-red-500  p-3 md:px-4  md:py-3 text-white rounded-md font-[600]"> Browse Products</button>
         </Link>
       </div>
-      <div className="h-52 w-[18rem]  ">
+      <div className="h-52 w-[18rem] hidden md:block ">
         <Image src={delivery} alt="a" ></Image>
       </div>
     </div>
     <div className="">
-      <h1 className="text-center text-3xl font-bold pt-7 pb-5">
+      <h1 className="text-center text-xl md:text-3xl font-bold pt-7 pb-5">
         Popular Categories
       </h1>
     </div>
@@ -92,7 +92,7 @@ const Page = async () => {
     </div>
 
     <div className="w-ful  h-[80vh] p-4  ">
-      <h1 className="text-3xl font-bold my-5  text-center  ">Hot Deals </h1>
+      <h1 className="text-xl md:text-3xl font-bold my-5  text-center  ">Hot Deals </h1>
       <Carousel products={products} />
     </div>
 

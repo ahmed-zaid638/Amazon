@@ -55,17 +55,17 @@ const Page = () => {
         )
     };
     return (
-        <div className='border rounded-md h-[80vh]    bg-white p-5 relative  ' >
-            <div className="flex  justify-between">
+        <div className='border rounded-md h-[80vh]    bg-white  relative  ' >
+            <div className="flex  justify-between p-[10px]">
                 <div className="flex font-bold">
-                    <h1 className="text-3xl">Your Shopping Cart</h1>
-                    <div className='w-16 h-16  '>
+                    <h1 className="text-xl  md:text-3xl">Your Shopping Cart</h1>
+                    <div className=' w-10 md:w-16 h-16  '>
                         <Image src={cartGif} alt="" />
                     </div>
                 </div>
 
                 <div className="">
-                    <p className="text-gray-500 text-xl font-light tracking-wider">
+                    <p className="text-gray-500  text-[16px] md:text-xl  font-light tracking-wider">
                         {
                             cartSnapshots?.docs?.filter(
                                 (data) => data?.data()?.uid === user?.uid
@@ -130,14 +130,14 @@ const Page = () => {
                     cartSnapshots?.docs?.filter((data) => data?.data()?.uid === user?.uid)
                         ?.length ? (
                     <button
-                        className="w-full bg-gradient-to-b from-[#ffd900] to-[#ffb300] rounded-xl p-2 text-xl font-semibold hover:from-[#ffb300] hover:to-[#ffd900]"
+                        className="w-full bg-gradient-to-b from-[#ffd900] to-[#ffb300] rounded-xl p-2 text-[16px] md:text-xl font-semibold hover:from-[#ffb300] hover:to-[#ffd900]"
                         onClick={createCheckout}
                     >
                         Proceed To Pay
                     </button>
                 ) : (
                     <button
-                        className="w-full  bg-[#ff9900] rounded-xl p-2 text-xl font-semibold text-white"
+                        className="w-full  bg-[#ff9900] rounded-xl p-2 text-[16px] md:text-xl font-semibold text-white"
                         onClick={() => { alert("Please Add Some Items To Your Cart!") }}
                     >
                         Proceed To Pay

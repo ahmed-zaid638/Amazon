@@ -18,7 +18,7 @@ const Page = async ({ params }) => {
           if (item.name.toLowerCase().includes(search.toLowerCase()) ||
             item.category.toLowerCase().includes(search.toLowerCase())) {
             return (
-              <Link key={index} href={`/products/${item.id}`} className='w-[200px]'>
+              <Link key={index} href={`/products/${item.id}`} className='w-[200px] '>
                 <Card name={item.name} image={item.image} price={item.price} className='w-[220px]' />
               </Link>
             )
