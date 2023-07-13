@@ -25,6 +25,7 @@
 - if you want to ensure that package is installed just type the package name 
 - differntiate between CLI and GUI
 - when you get stuck with installation use powershell instead of command line
+- to console in nextjs component you should add 'use client' keyword first
 
 
 

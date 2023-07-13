@@ -10,6 +10,7 @@ import { auth, db } from "../../firebase";
 import CartCard from "../components/CartCard";
 import { ImSpinner2 } from "react-icons/im";
 import { loadStripe } from "@stripe/stripe-js";
+import axios from "axios";
 export const metadata = {
     title: 'Cart'
 }
@@ -36,10 +37,23 @@ const Page = () => {
         process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY
     )
     const createCheckout = async () => {
-        console.log('checkout');
         const stripe = await stripePromise;
-    };
+        console.log("hello from stripe")
+        const checkout = await axios.post("api/checkout", {
+            uid: user?.uid,
+            cart: cart,
+        });;
+        const result = await stripe.redirectToCheckout({
+            sessionId: stripe.data.session.id,
 
+        }).then(() => {
+            console.log("redirected");
+        }
+        ).catch(() => {
+            console.log('still not redirected')
+        }
+        )
+    };
     return (
         <div className='border rounded-md h-[80vh]    bg-white p-5 relative  ' >
             <div className="flex  justify-between">
@@ -135,6 +149,7 @@ const Page = () => {
 }
 
 export default Page
+
 
 
 
