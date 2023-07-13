@@ -6,6 +6,7 @@ const Loading = () => {
             <div className='w-[540px] h-[600px]    rounded-lg shadow-sm border  animate-pulse '>
             </div>
         </div>
+        
     )
 }
 

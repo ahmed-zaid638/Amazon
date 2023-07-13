@@ -54,6 +54,7 @@ const Page = () => {
         }
         )
     };
+    
     return (
         <div className='border rounded-md h-[80vh]  bg-white  relative  ' >
             <div className="flex  justify-between p-[10px]">
