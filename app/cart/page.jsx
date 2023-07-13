@@ -55,7 +55,7 @@ const Page = () => {
         )
     };
     return (
-        <div className='border rounded-md h-[80vh]    bg-white  relative  ' >
+        <div className='border rounded-md h-[80vh]  bg-white  relative  ' >
             <div className="flex  justify-between p-[10px]">
                 <div className="flex font-bold">
                     <h1 className="text-xl  md:text-3xl">Your Shopping Cart</h1>
