@@ -1,3 +1,4 @@
+
 import React from 'react'
 import LoadingCards from '../../components/LoadingCards'
 const Loading = () => {
@@ -6,12 +7,10 @@ const Loading = () => {
             <div className='w-[540px] h-[600px]    rounded-lg shadow-sm border  animate-pulse '>
             </div>
         </div>
-        
+
     )
 }
 
 export default Loading
-
-
 
 
