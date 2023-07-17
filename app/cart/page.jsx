@@ -43,7 +43,6 @@ const Page = () => {
     //     });;
     //     const result = await stripe.redirectToCheckout({
     //         sessionId: stripe.data.session.id,
-
     //     }).then(() => {
     //         console.log("redirected");
     //     }
@@ -54,7 +53,7 @@ const Page = () => {
     // };
 
     return (
-        <div className='border rounded-md h-[80vh]  bg-white  relative  ' >
+        <div className='border rounded-lg h-[80vh]  bg-white  relative  ' >
             <div className="flex  justify-between p-[10px]">
                 <div className="flex font-bold">
                     <h1 className="text-xl  md:text-3xl">Your Shopping Cart</h1>
@@ -75,7 +74,7 @@ const Page = () => {
                 </div>
             </div>
             {/* Card card  */}
-            <div className="w-full h-[63vh] overflow-y-auto">
+            <div className="w-full h-[63vh] overflow-y-auto p-[20px]">
                 {!loading2 ? (
                     user ? (
                         cartSnapshots?.docs?.filter(
@@ -130,7 +129,7 @@ const Page = () => {
                         ?.length ? (
                     <button
                         className="w-full bg-gradient-to-b from-[#ffd900] to-[#ffb300] rounded-xl p-2 text-[16px] md:text-xl font-semibold hover:from-[#ffb300] hover:to-[#ffd900]"
-                        onClick={createCheckout}
+                        // onClick={createCheckout}
                     >
                         Proceed To Pay
                     </button>

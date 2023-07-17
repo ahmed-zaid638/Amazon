@@ -16,6 +16,3 @@ const Card = ({ image, price, name }) => {
 
 export default Card
 
-
-
-

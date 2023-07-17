@@ -12,7 +12,6 @@ const getProduct = async (id) => {
 const Page = async ({ params }) => {
     const { id } = params;
     const data = await getProduct(id);
-
     return (
         <div className="w-full flex flex-col lg:flex-row mb-8 ">
             <div className="lg:w-[50%] w-full mb-5">

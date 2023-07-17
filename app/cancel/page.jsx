@@ -3,8 +3,6 @@ import React from 'react'
 import Image from 'next/image';
 
 const Page = () => {
-
- console.log('eee')
   return (
     <div className="w-full flex items-center justify-center h-[70vh] overflow-hidden flex-col">
       <div>

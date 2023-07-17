@@ -43,7 +43,7 @@ const Page = async () => {
     },
     {
       icon: <FaHeadphonesAlt size={35} />,
-      category: "",
+      category: "headphone",
     },
     {
       icon: <BsSmartwatch size={35} />,

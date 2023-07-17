@@ -11,6 +11,7 @@
 - style properity with tailwindcss should include object and nested one => style= {{padding : '100px' , margin: '40px' } }
   and aslo shlould wrape the value of properity with double quotes
 - when using event handlers you should use "use client" keyword and some cases should use "use server" keyword
+- image compressing 
 
 
 ----------- Info ------------
