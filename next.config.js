@@ -7,8 +7,9 @@ const nextConfig = {
         serverActions: true,
     },
     env: {
-    stripe_secret: process.env.STRIPE_SECRET
-    }
+        stripe_secret: process.env.STRIPE_SECRET
+    },
+
 }
 
 module.exports = nextConfig

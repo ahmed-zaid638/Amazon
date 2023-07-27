@@ -8,7 +8,7 @@ import { GoogleAuthProvider } from "firebase/auth";
 // Your web app's Firebase configuration
 const firebaseConfig = {
   apiKey: "AIzaSyBJTKojmvClJ7VKoICkxJQFPUf5ZaGMJDs",
-  authDomain: "nextjs-809bb.firebaseapp.com",
+  authDomain: "https://amazon-nextjs-theta.vercel.app/",
   projectId: "nextjs-809bb",
   storageBucket: "nextjs-809bb.appspot.com",
   messagingSenderId: "853193966611",

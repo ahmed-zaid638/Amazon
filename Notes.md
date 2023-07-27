@@ -27,6 +27,7 @@
 - differntiate between CLI and GUI
 - when you get stuck with installation use powershell instead of command line
 - to console in nextjs component you should add 'use client' keyword first
+- discard changes means that file changes will not be committed but changes will stil in the local workplace
 
 
 
