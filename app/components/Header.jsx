@@ -59,7 +59,7 @@ const Header = () => {
           </button>
         </Link>
         <div className="w-11 h-11  ms-3 rounded-full">
-          <Link href={"profile"}>
+          <Link href={"#"}>
             <Image src={user ? user.photoURL : defaultImage} width={120} height={66} alt="" />
           </Link>
         </div>
