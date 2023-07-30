@@ -8,7 +8,7 @@ const Page = () => {
       <div>
         <h1 className="text-3xl font-bold"> Opps! Something Went Wrong.</h1>
       </div>
-      <Image src={"/gifs/cancel.gif"} alt="success image" width={500} height={500} priority={true} />
+      <Image src={"/gifs/cancel.gif"} priority={true} alt="success image" width={500} height={500} />
     </div>
   )
 }

@@ -1,9 +1,7 @@
 import './globals.css'
-import dynamic from 'next/dynamic'
 import Head from 'next/head'
 import Header from './components/Header'
 import Sidebar from './components/Sidebar'
-import { BiCar } from 'react-icons/bi'
 
 export const metadata = {
   title: 'Home'

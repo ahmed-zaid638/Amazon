@@ -65,7 +65,7 @@ const Page = async () => {
         </Link>
       </div>
       <div className="h-52 w-[18rem] hidden md:block ">
-        <Image src={delivery} alt="a" ></Image>
+        <Image src={delivery} alt="a"  priority={true}></Image>
       </div>
     </div>
     <div className="">

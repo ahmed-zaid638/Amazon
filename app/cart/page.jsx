@@ -58,7 +58,7 @@ const Page = () => {
                 <div className="flex font-bold">
                     <h1 className="text-xl  md:text-3xl">Your Shopping Cart</h1>
                     <div className=' w-10 md:w-16 h-16  '>
-                        <Image src={cartGif} alt="" />
+                        <Image src={cartGif} property={true} alt="" />
                     </div>
                 </div>
 
