@@ -59,7 +59,7 @@ const Page = async () => {
   return <div className="m-4 ">
     <div className=" w-full h-72 p-6 flex items-center justify-between rounded-lg magic-gradient shadow-sm -mt-[15px]" >
       <div className="  w=[90%] md-[70%] ">
-        <h1 className="text-xl   lg:text-3xl  text-white font-bold  ">FREE DELIVERY | Ahmed </h1>
+        <h1 className="text-xl   lg:text-3xl  text-white font-bold  ">FREE DELIVERY </h1>
         <p className="text-white py-4 text-[16px] lg:text-xl  ">Do not miss it out! Only today, get free Next Day Delivery on all your orders.</p>
         <Link href={"/products"}>  <button className="bg-red-500  p-3 md:px-4  md:py-3 text-white rounded-md font-[600]"> Browse Products</button>
         </Link>
