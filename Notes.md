@@ -30,6 +30,8 @@
 - discard changes means that file changes will not be committed but changes will stil in the local workplace
 - if you see a red single curly brace mean that it have no  clonsing one
 - if any something blocked will apear in the top search bar of the browser
+- you can set a parameter and dont respond to it.
+- when you see an reasable eror you can comment it and recommnet it again it will be resolved
 
 
 

@@ -12,11 +12,8 @@ import {
   FaHeadphonesAlt
 } from "react-icons/fa";
 import { IoGameController } from "react-icons/io5";
+import { getProducts } from "./api/products";
 
-const getProducts = async () => {
-  const products = await fetch('https://www.screentechnicals.com/api/ecommerce/products', { next: { revalidate: 10 } });
-  return products.json();
-}
 const Page = async () => {
   const products = await getProducts();
 

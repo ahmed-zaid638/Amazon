@@ -3,11 +3,7 @@
 import { Suspense } from 'react';
 import Card from '../../components/Card';
 import Link from 'next/link';
-
-const getProducts = async () => {
-  const products = await fetch('https://www.screentechnicals.com/api/ecommerce/products', { next: { revalidate: 10 } });
-  return products.json()
-}
+import { getProducts } from '../../api/products';
 const Page = async ({ params }) => {
   const { search } = params;
   const products = await getProducts();
