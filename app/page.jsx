@@ -12,11 +12,8 @@ import {
   FaHeadphonesAlt
 } from "react-icons/fa";
 import { IoGameController } from "react-icons/io5";
+import { getProducts } from "./api/products";
 
-const getProducts = async () => {
-  const products = await fetch('https://www.screentechnicals.com/api/ecommerce/products', { next: { revalidate: 10 } });
-  return products.json();
-}
 const Page = async () => {
   const products = await getProducts();
 
@@ -43,7 +40,7 @@ const Page = async () => {
     },
     {
       icon: <FaHeadphonesAlt size={35} />,
-      category: "",
+      category: "headphone",
     },
     {
       icon: <BsSmartwatch size={35} />,
@@ -68,7 +65,7 @@ const Page = async () => {
         </Link>
       </div>
       <div className="h-52 w-[18rem] hidden md:block ">
-        <Image src={delivery} alt="a" ></Image>
+        <Image src={delivery} alt="a"  priority={true}></Image>
       </div>
     </div>
     <div className="">
@@ -100,5 +97,3 @@ const Page = async () => {
 };
 
 export default Page;
-
-

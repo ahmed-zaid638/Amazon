@@ -11,9 +11,7 @@ import CartCard from "../components/CartCard";
 import { ImSpinner2 } from "react-icons/im";
 import { loadStripe } from "@stripe/stripe-js";
 import axios from "axios";
-export const metadata = {
-    title: 'Cart'
-}
+
 const Page = () => {
     const [user, loading] = useAuthState(auth);
     const cartsRef = collection(db, "cart");
@@ -33,34 +31,34 @@ const Page = () => {
         sum += total[i];
     }
     //stripe checkout
-    const stripePromise = loadStripe(
-        process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY
-    )
-    const createCheckout = async () => {
-        const stripe = await stripePromise;
-        console.log("hello from stripe")
-        const checkout = await axios.post("api/checkout", {
-            uid: user?.uid,
-            cart: cart,
-        });;
-        const result = await stripe.redirectToCheckout({
-            sessionId: stripe.data.session.id,
+    // const stripePromise = loadStripe(
+    //     process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY
+    // )
+    // // const createCheckout = async () => {
+    //     const stripe = await stripePromise;
+    //     console.log("hello from stripe")
+    //     const checkout = await axios.post("api/checkout", {
+    //         uid: user?.uid,
+    //         cart: cart,
+    //     });;
+    //     const result = await stripe.redirectToCheckout({
+    //         sessionId: stripe.data.session.id,
+    //     }).then(() => {
+    //         console.log("redirected");
+    //     }
+    //     ).catch(() => {
+    //         console.log('still not redirected')
+    //     }
+    //     )
+    // };
 
-        }).then(() => {
-            console.log("redirected");
-        }
-        ).catch(() => {
-            console.log('still not redirected')
-        }
-        )
-    };
     return (
-        <div className='border rounded-md h-[80vh]    bg-white  relative  ' >
+        <div className='border rounded-lg h-[80vh]  bg-white  relative  ' >
             <div className="flex  justify-between p-[10px]">
                 <div className="flex font-bold">
                     <h1 className="text-xl  md:text-3xl">Your Shopping Cart</h1>
                     <div className=' w-10 md:w-16 h-16  '>
-                        <Image src={cartGif} alt="" />
+                        <Image src={cartGif} property={true} alt="" />
                     </div>
                 </div>
 
@@ -76,7 +74,7 @@ const Page = () => {
                 </div>
             </div>
             {/* Card card  */}
-            <div className="w-full h-[63vh] overflow-y-auto">
+            <div className="w-full h-[63vh] overflow-y-auto p-[20px]">
                 {!loading2 ? (
                     user ? (
                         cartSnapshots?.docs?.filter(
@@ -131,7 +129,7 @@ const Page = () => {
                         ?.length ? (
                     <button
                         className="w-full bg-gradient-to-b from-[#ffd900] to-[#ffb300] rounded-xl p-2 text-[16px] md:text-xl font-semibold hover:from-[#ffb300] hover:to-[#ffd900]"
-                        onClick={createCheckout}
+                        // onClick={createCheckout}
                     >
                         Proceed To Pay
                     </button>
@@ -149,7 +147,4 @@ const Page = () => {
 }
 
 export default Page
-
-
-
 

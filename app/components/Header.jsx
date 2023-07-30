@@ -16,20 +16,20 @@ const Header = () => {
   const router = useRouter();
   const [searchTerm, setsearchTerm] = useState("")
   const [user, loading] = useAuthState(auth)
-  const searching = (e) => {
+  const cartsRef = collection(db, "cart")
+  const [cartSnapshotData, loading2] = useCollectionData(cartsRef);
+  let totalLength = cartSnapshotData?.filter((data) => data?.uid === user?.uid)?.length || 0;
+
+  const searching = async(e) => {
     e.preventDefault();
     if (searchTerm !== '') {
       router.push(`category/${searchTerm}`)
     }
   }
-  const cartsRef = collection(db, "cart")
-  const [cartSnapshotData, loading2] = useCollectionData(cartsRef);
-  let totalLength = cartSnapshotData?.filter((data) => data?.uid === user?.uid)?.length || 0;
-
   return (
     <div className="h-20  w-full px-4 py-3 shadow-sm  bg-white flex  items-center  md:py-4 md:px-8 fixed  top-0 left-0 z-50 ">
-      <Link href={'/cart'}>
-        <Image src={logo} width={120} height={66} alt="" />
+      <Link href={'/'} >
+        <Image src={logo} width={120} height={66} alt="" property={true} />
       </Link>
       <div className="w-full ps-3 ">
         <form className="flex " onSubmit={searching}>
@@ -59,8 +59,8 @@ const Header = () => {
           </button>
         </Link>
         <div className="w-11 h-11  ms-3 rounded-full">
-          <Link href={"profile"}>
-            <Image src={user ? user.photoURL : defaultImage} width={120} height={66} alt="" />
+          <Link href={"#"}>
+            <Image src={user ? user.photoURL : defaultImage} width={120} height={66} property={true}  alt="" className="rounded-full" />
           </Link>
         </div>
       </div>

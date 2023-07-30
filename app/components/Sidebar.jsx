@@ -1,5 +1,5 @@
 'use client'
-import React  from "react";
+import React from "react";
 import { BiCategoryAlt, BiLogoGoogle } from "react-icons/bi";
 import { RiBillFill } from "react-icons/ri"
 import { FcGoogle } from "react-icons/fc"
@@ -11,10 +11,11 @@ import { useAuthState } from 'react-firebase-hooks/auth';
 
 
 const Sidebar = () => {
-  let categories = ['Electronics', 'Home and Garden', 'Fashion', 'Beauty Products', 'Automotive', 'Books', 'Games', 'Watch']
+  let categories = ['Electronics', 'Garden', 'Shoes' ,  'Fashion', 'Beauty', 'Automotive', 'Books', 'Games', 'Watch']
   const [user, loading, error] = useAuthState(auth);
   const Login = async () => {
     await signInWithPopup(auth, provider)
+
   }
   const Logout = async () => {
     await signOut(auth)
@@ -28,7 +29,7 @@ const Sidebar = () => {
       </div>
       <div className="ps-11 py-4   flex flex-col ">
         {categories.map((category, index) => (
-          <Link key={index} href={`/category/${category.toLowerCase()}`} className="text-lg py-2 fw-bold  hover:text-[#ff9900] font-[500] ">{category}</Link>
+          <Link key={index} href={`/category/${category.toLowerCase().trim()}`} className="text-lg py-2 fw-bold  hover:text-[#ff9900] font-[500] ">{category}</Link>
         ))}
       </div>
 
@@ -56,6 +57,5 @@ const Sidebar = () => {
   );
 };
 export default Sidebar;
-
 
 

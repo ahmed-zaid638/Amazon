@@ -9,13 +9,10 @@ const Card = ({ image, price, name }) => {
                 <Image className='w-[60%]' src={image} width={500} height={500} alt="" priority={true} />
             </div>
             <h1 className=''> {name.slice(0, 40)}</h1>
-            <div className='text-xl'>${price}</div>
+            <div className='tecaxt-xl'>${price}</div>
         </div>
     )
 }
 
 export default Card
-
-
-
 

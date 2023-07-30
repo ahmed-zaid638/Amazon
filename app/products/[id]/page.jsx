@@ -1,18 +1,11 @@
 import Image from "next/image";
 import React from "react";
 import Buttons from "../../components/Buttons";
+import { getSingleProduct } from "../../api/products.js";
 
-const getProduct = async (id) => {
-    const products = await fetch(
-        `https://www.screentechnicals.com/api/ecommerce/products/${id}`,
-        { next: { revalidate: 10 } }
-    );
-    return products.json();
-};
 const Page = async ({ params }) => {
     const { id } = params;
-    const data = await getProduct(id);
-
+    const data = await getSingleProduct(id);
     return (
         <div className="w-full flex flex-col lg:flex-row mb-8 ">
             <div className="lg:w-[50%] w-full mb-5">
@@ -23,7 +16,7 @@ const Page = async ({ params }) => {
                 <h2 className="text-[20px] md:text-3xl font-bold  ">{data?.[0]?.name}</h2>
                 <h2 className="text-xl font-semibold">&#8377;{data?.[0]?.price}</h2>
                 <h2 className="text-sm tracking-wide">{data?.[0]?.description}</h2>
-                <Buttons data = {data} />
+                <Buttons data={data} />
             </div>
         </div>
     )
